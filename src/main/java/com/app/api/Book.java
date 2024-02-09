@@ -4,11 +4,13 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
 
 @Entity
 public class Book {
 
   private @Id @GeneratedValue Long id;
+  @NotBlank(message = "Title must not be blank.")
   private String title;
   private String author;
   private String isbn;
